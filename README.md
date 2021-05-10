@@ -12,3 +12,5 @@ Python + React + Django + GraphQL
    - [ ] creation of playlists
  - [ ] Docker image
  - [ ] Admin/user levels
+ 
+test
