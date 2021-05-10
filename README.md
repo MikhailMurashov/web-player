@@ -4,9 +4,11 @@ Test task for fullstack developer position
 
 Python + React + Django + GraphQL
 
-### Plan
+## Plan
  - [ ] Registration page
- - [ ] email notifications
+ - [ ] Email notifications
  - [ ] Yandex Music integration
    - [ ] tracks search 
    - [ ] creation of playlists
+ - [ ] Docker image
+ - [ ] Admin/user levels
