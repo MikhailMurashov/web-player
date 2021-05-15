@@ -2,7 +2,7 @@
 
 Test task for fullstack developer position
 
-Python + React + Django + GraphQL
+Python + React + Django + GraphQLasd
 
 ## Plan
  - [ ] Registration page
