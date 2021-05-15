@@ -1,0 +1,20 @@
+[
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Murashov",
+      "email": "@gmail"
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "first_name": "Maxim",
+      "last_name": "Sidorov",
+      "email": "@yandex"
+    }
+  }
+]
