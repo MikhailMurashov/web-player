@@ -21,7 +21,7 @@ const Authorization = () => {
 		e.preventDefault();
 	}
 
-	const regPage = () => {
+	const toRegPage = () => {
 		ReactDOM.render(<Registration />, document.getElementById('root'));
 	}
 
@@ -43,9 +43,9 @@ const Authorization = () => {
 					<input type='password' placeholder='&bull;&bull;&bull;&bull;&bull;&bull;' value={password} onChange={passwordChanged} />
 				</label>
 
-				<input className='authButton' type='submit' value='Войти' />
+				<input className='auth-button' type='submit' value='Войти' />
 
-				<input className='regPageButton' type='button' value='Зарегистрироваться' onClick={regPage}/>
+				<input className='reg-page-button' type='button' value='Зарегистрироваться' onClick={toRegPage}/>
 			</form>
 		</div>
 	);

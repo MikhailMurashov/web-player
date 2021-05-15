@@ -1,6 +1,7 @@
 import React, {useState} 	from 'react';
 import ReactDOM 			from 'react-dom';
 import Authorization 		from './Authorization.js'
+import EmailSent 			from './EmailSent.js'
 
 const Registration = () => {
 	// Custom constants
@@ -22,11 +23,11 @@ const Registration = () => {
 	}
 
 	const formSubmitted = e => {
-		alert('Имя: ' + name + '   E-mail: ' + email + '   Password: ' + password);
+		ReactDOM.render(<EmailSent email={email} />, document.getElementById('root'));
 		e.preventDefault();
 	}
 
-	const authPage = () => {
+	const toAuthPage = () => {
 		ReactDOM.render(<Authorization />, document.getElementById('root'));
 	}
 
@@ -53,9 +54,9 @@ const Registration = () => {
 					<input type='password' placeholder='&bull;&bull;&bull;&bull;&bull;&bull;' value={password} onChange={passwordChanged} />
 				</label>
 
-				<input className='regButton' type='submit' value='Зарегистрироваться' />
+				<input className='reg-button' type='submit' value='Зарегистрироваться' />
 
-				<input className='authPageButton' type='button' value='У меня уже есть аккаунт' onClick={authPage}/>
+				<input className='auth-page-button' type='button' value='У меня уже есть аккаунт' onClick={toAuthPage}/>
 			</form>
 		</div>
 	);
