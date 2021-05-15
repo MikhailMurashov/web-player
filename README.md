@@ -1,6 +1,6 @@
 # web-player
-Test task for fullstack developer position
 
+Test task for fullstack developer position
 
 Python + React + Django + GraphQL
 
