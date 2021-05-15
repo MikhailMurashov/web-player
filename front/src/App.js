@@ -4,28 +4,25 @@ import Authorization 		from './page/Authorization.js'
 
 
 
-
-const GET_TEST = gql`
-	query GetTest {
-		me {
+const App = () => {
+	const CHECK_USER = gql`query {
+		users {
+			name
 			id
 		}
-	}
-`;
+	}`;
 
-const App = () => {
-	// const { loading, error, data } = useQuery(GET_TEST);
+	const { loading, error, data } = useQuery(CHECK_USER);
 
-	// if (loading) return <p>Loading...</p>;
-	// if (error) return <p>Error :(</p>;
+	if (loading) console.log(loading);
+	if (error) console.log(error);
 
-	// console.log(data);
+	console.log(data);
 
 	return (
 		<Authorization />
 	);
 }
-
 
 
 

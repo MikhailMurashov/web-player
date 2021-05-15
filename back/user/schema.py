@@ -10,15 +10,22 @@ class UserType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    user = graphene.Field(UserType, id=graphene.Int())
-    users = graphene.List(UserType)
+    check_user = graphene.Field(UserType, email=graphene.String())
+    user =       graphene.Field(UserType, id=graphene.Int())
+    users =      graphene.List(UserType)
+
+    def resolve_check_user(self, info, **kwargs):
+        email = kwargs.get('email')
+        return User.objects.get(email=email) 
 
     def resolve_user(self, info, **kwargs):
         id = kwargs.get('id')
-        return User.objects.get(id=id)
+        return User.objects.get(id=id)        
 
     def resolve_users(self, info):
         return User.objects.all()
+
+
 
 
 class UserMutation(graphene.Mutation):

@@ -3,6 +3,8 @@ import ReactDOM 			from 'react-dom';
 import Authorization 		from './Authorization.js'
 import EmailSent 			from './EmailSent.js'
 
+
+
 const Registration = () => {
 	// Custom constants
 	const [name, setName] = 		useState('');

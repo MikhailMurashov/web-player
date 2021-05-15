@@ -2,6 +2,8 @@ import React, {useState} 	from 'react';
 import ReactDOM 			from 'react-dom';
 import Registration 		from './Registration.js'
 
+
+
 const EmailSent = props => {
 	// Init props
 	const {email} = props;

@@ -15,12 +15,12 @@ var schema = buildSchema(`
 	}
 
 	type Query {
-		users(id:Int): User
+		users: [User]
 	}
 `);
  
 
-let users = 	[
+let users = [
 	{id: 0, name: 'Max'},
 	{id: 1, name: 'Vera'},
 	{id: 2, name: 'Bonya'}

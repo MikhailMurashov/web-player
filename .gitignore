@@ -22,3 +22,5 @@
 /frontnpm-debug.log*
 /frontyarn-debug.log*
 /frontyarn-error.log*
+
+/back/server.bat

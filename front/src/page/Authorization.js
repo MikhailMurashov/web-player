@@ -2,6 +2,8 @@ import React, {useState} 	from 'react';
 import ReactDOM 			from 'react-dom';
 import Registration 		from './Registration.js'
 
+
+
 const Authorization = () => {
 	// Custom constants
 	const [email, setEmail] = useState('');
