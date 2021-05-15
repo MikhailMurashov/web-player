@@ -1,0 +1,78 @@
+.main-container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	font-family: Arial;
+	font-weight: 500;
+	color: #343a40;
+}
+
+h1 {
+	font-weight: 500;
+	width: 100%;
+	margin: 0 auto 10vh auto;
+}
+
+form {
+	width: 80%;
+	max-width: 340px;
+	margin: 2vh auto;
+	text-align: left;
+}
+
+label {
+
+}
+
+input {
+	width: 100%;
+	height: 23px;
+	margin: 1vh auto 3vh auto;
+	padding: 5px;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	outline: none;
+}
+
+input:hover {
+	box-shadow: 0 0 5px grey;
+	transition: 0.1s;
+}
+
+.authButton, .regButton {
+	width: 20%;
+	height: 35px;
+	padding: 0;
+	background-color: #28a745;
+	border: none;
+	color: white;
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+.regPageButton, .authPageButton {
+	display: block;
+	width: 50%;
+	height: 34px;
+	margin: 0 0 0 -5px;
+	background-color: white;
+	border: none;
+	text-align: left;
+	color: #28a745;
+	font-size: 15px;
+}
+
+.regPageButton:hover, .authPageButton:hover {
+	box-shadow: none;
+	text-decoration: underline;
+}
+
+.regButton {
+	width: 50%;
+}
+
+.authPageButton {
+	width: 60%;
+}
