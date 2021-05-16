@@ -44,7 +44,7 @@ const Authorization = props => {
 
 				<input className='auth-button' type='submit' value='Войти' />
 
-				<input className='reg-page-button' type='button' value='Зарегистрироваться' onClick={toRegPage}/>
+				<input className='reg-page-button' type='button' value='Зарегистрироваться' onClick={toRegPage} />
 			</form>
 		</div>
 	);

@@ -1,5 +1,4 @@
 import React, {useState} 	from 'react';
-import QueryUsers 			from '../QueryUsers.js';
 
 
 
@@ -24,7 +23,10 @@ const Registration = props => {
 	}
 
 	const formSubmitted = e => {
+		// if (FormSubmitted(email) === 'not exist') 
 		setPage('EmailSent');
+		// else console.log('user exist');
+		
 		e.preventDefault();
 	}
 
@@ -32,10 +34,10 @@ const Registration = props => {
 		setPage('Authorization');
 	}
 
+
 	// Render
 	return (
 		<div className='main-container'>
-			<QueryUsers />
 			<h1>
 				Регистрация
 			</h1>
@@ -58,7 +60,7 @@ const Registration = props => {
 
 				<input className='reg-button' type='submit' value='Зарегистрироваться' />
 
-				<input className='auth-page-button' type='button' value='У меня уже есть аккаунт' onClick={toAuthPage}/>
+				<input className='auth-page-button' type='button' value='У меня уже есть аккаунт' onClick={toAuthPage} />
 			</form>
 		</div>
 	);

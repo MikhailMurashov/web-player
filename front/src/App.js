@@ -14,10 +14,9 @@ const App = () => {
 	const [password, setPassword] = useState('');
 
 	// Render
-	if (page === 'Authorization') 	return <Authorization 	setPage={setPage} email={email} setEmail={setEmail} password={password} setPassword={setPassword}/>;
-	if (page === 'Registration') 	return <Registration 	setPage={setPage} email={email} setEmail={setEmail} password={password} setPassword={setPassword}/>;
-	if (page === 'EmailSent') 		return <EmailSent 		setPage={setPage} email={email} setEmail={setEmail} password={password} setPassword={setPassword}/>;
-
+	if (page === 'Authorization') 	return <Authorization 	setPage={setPage} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />;
+	if (page === 'Registration') 	return <Registration 	setPage={setPage} email={email} setEmail={setEmail} password={password} setPassword={setPassword} />;
+	if (page === 'EmailSent') 		return <EmailSent 		setPage={setPage} email={email} />;
 }
 
 

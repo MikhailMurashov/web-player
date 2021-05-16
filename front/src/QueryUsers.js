@@ -11,7 +11,7 @@ const QueryUsers = () => {
 		}
 	}`;
 
-	const { loading, error, data } = useQuery(CHECK_USER);
+	const {loading, error, data} = useQuery(CHECK_USER);
 
 	if (loading) console.log(loading);
 	if (error) console.log(error);
@@ -20,7 +20,7 @@ const QueryUsers = () => {
 	const temp = JSON.stringify(data);
 
 	return(
-		<div height='200px'>
+		<div>
 			{temp}
 		</div>
 	);

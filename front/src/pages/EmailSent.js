@@ -1,6 +1,15 @@
 import React from 'react';
+import { useQuery, gql } 	from '@apollo/client';
 
 
+
+const CHECK_USER = gql`
+	query {
+		users {
+			id
+		}
+	}
+`;
 
 const EmailSent = props => {
 	// Init props
@@ -8,15 +17,22 @@ const EmailSent = props => {
 
 	// Custom methods
 	const sendEmail = () => {
-
+		//console.log(SaveUser);
 	}
 
 	const toRegPage = () => {
 		setPage('Registration');
 	}
 
+	// Default methods
+	const {loading, error, data} = useQuery(CHECK_USER);
+
 	// Render
-	return (
+	if (loading) return <div className='main-container'>Пожалуйста, подождите</div>;
+
+	if (error) return <div className='main-container'>Пользователь с таким адресом уже зарегестрирован</div>;
+
+	if (data) return (
 		<div className='main-container'>
 			<h1>
 				Письмо отправлено
