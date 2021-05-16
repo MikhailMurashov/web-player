@@ -28,10 +28,10 @@ label {
 }
 
 input {
-	width: 100%;
+	width: calc(98% - 2px);
 	height: 23px;
 	margin: 1vh auto 4vh auto;
-	padding: 5px;
+	padding: 1%;
 	border: 1px solid lightgrey;
 	border-radius: 4px;
 	outline: none;

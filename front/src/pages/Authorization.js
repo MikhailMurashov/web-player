@@ -1,13 +1,10 @@
-import React, {useState} 	from 'react';
-import ReactDOM 			from 'react-dom';
-import Registration 		from './Registration.js'
+import React from 'react';
 
 
 
-const Authorization = () => {
-	// Custom constants
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+const Authorization = props => {
+	// Init props
+	const {setPage, email, setEmail, password, setPassword} = props;
 
 	// Custom methods
 	const emailChanged = e => {
@@ -24,7 +21,7 @@ const Authorization = () => {
 	}
 
 	const toRegPage = () => {
-		ReactDOM.render(<Registration />, document.getElementById('root'));
+		setPage('Registration');
 	}
 
 	// Render

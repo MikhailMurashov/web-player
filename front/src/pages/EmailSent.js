@@ -1,12 +1,10 @@
-import React, {useState} 	from 'react';
-import ReactDOM 			from 'react-dom';
-import Registration 		from './Registration.js'
+import React from 'react';
 
 
 
 const EmailSent = props => {
 	// Init props
-	const {email} = props;
+	const {setPage, email} = props;
 
 	// Custom methods
 	const sendEmail = () => {
@@ -14,7 +12,7 @@ const EmailSent = props => {
 	}
 
 	const toRegPage = () => {
-		ReactDOM.render(<Registration />, document.getElementById('root'));
+		setPage('Registration');
 	}
 
 	// Render

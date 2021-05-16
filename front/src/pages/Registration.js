@@ -1,15 +1,14 @@
 import React, {useState} 	from 'react';
-import ReactDOM 			from 'react-dom';
-import Authorization 		from './Authorization.js'
-import EmailSent 			from './EmailSent.js'
+import QueryUsers 			from '../QueryUsers.js';
 
 
 
-const Registration = () => {
-	// Custom constants
-	const [name, setName] = 		useState('');
-	const [email, setEmail] = 		useState('');
-	const [password, setPassword] = useState('');
+const Registration = props => {
+	// Init props
+	const {setPage, email, setEmail, password, setPassword} = props;
+
+	// Set states
+	const [name, setName] = useState('');
 
 	// Custom methods
 	const nameChanged = e => {
@@ -25,17 +24,18 @@ const Registration = () => {
 	}
 
 	const formSubmitted = e => {
-		ReactDOM.render(<EmailSent email={email} />, document.getElementById('root'));
+		setPage('EmailSent');
 		e.preventDefault();
 	}
 
 	const toAuthPage = () => {
-		ReactDOM.render(<Authorization />, document.getElementById('root'));
+		setPage('Authorization');
 	}
 
 	// Render
 	return (
 		<div className='main-container'>
+			<QueryUsers />
 			<h1>
 				Регистрация
 			</h1>
