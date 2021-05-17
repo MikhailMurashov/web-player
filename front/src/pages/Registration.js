@@ -1,13 +1,11 @@
 import React, {useState} 	from 'react';
+import CheckUser 			from '../CheckUser.js'
 
 
 
 const Registration = props => {
 	// Init props
-	const {setPage, email, setEmail, password, setPassword} = props;
-
-	// Set states
-	const [name, setName] = useState('');
+	const {setPage, name, setName, email, setEmail, password, setPassword} = props;
 
 	// Custom methods
 	const nameChanged = e => {
@@ -22,12 +20,14 @@ const Registration = props => {
 		setPassword(e.target.value);
 	}
 
-	const formSubmitted = e => {
+	function formSubmitted() {
+
 		// if (FormSubmitted(email) === 'not exist') 
-		setPage('EmailSent');
+		
+		//setPage('EmailSent');
 		// else console.log('user exist');
 		
-		e.preventDefault();
+		//e.preventDefault();
 	}
 
 	const toAuthPage = () => {
