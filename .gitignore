@@ -24,3 +24,5 @@
 /frontyarn-error.log*
 
 /back/server.bat
+/back/app/__pycache__
+/back/user/__pycache__
