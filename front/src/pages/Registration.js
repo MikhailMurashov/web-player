@@ -1,13 +1,11 @@
 import React, {useState} 	from 'react';
-import ReactDOM 			from 'react-dom';
-import Authorization 		from './Authorization.js'
-import EmailSent 			from './EmailSent.js'
+import CheckUser 			from '../CheckUser.js'
 
-const Registration = () => {
-	// Custom constants
-	const [name, setName] = 		useState('');
-	const [email, setEmail] = 		useState('');
-	const [password, setPassword] = useState('');
+
+
+const Registration = props => {
+	// Init props
+	const {setPage, name, setName, email, setEmail, password, setPassword} = props;
 
 	// Custom methods
 	const nameChanged = e => {
@@ -22,14 +20,20 @@ const Registration = () => {
 		setPassword(e.target.value);
 	}
 
-	const formSubmitted = e => {
-		ReactDOM.render(<EmailSent email={email} />, document.getElementById('root'));
-		e.preventDefault();
+	function formSubmitted() {
+
+		// if (FormSubmitted(email) === 'not exist') 
+		
+		//setPage('EmailSent');
+		// else console.log('user exist');
+		
+		//e.preventDefault();
 	}
 
 	const toAuthPage = () => {
-		ReactDOM.render(<Authorization />, document.getElementById('root'));
+		setPage('Authorization');
 	}
+
 
 	// Render
 	return (
@@ -56,7 +60,7 @@ const Registration = () => {
 
 				<input className='reg-button' type='submit' value='Зарегистрироваться' />
 
-				<input className='auth-page-button' type='button' value='У меня уже есть аккаунт' onClick={toAuthPage}/>
+				<input className='auth-page-button' type='button' value='У меня уже есть аккаунт' onClick={toAuthPage} />
 			</form>
 		</div>
 	);

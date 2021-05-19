@@ -1,31 +1,33 @@
 import './App.css';
-import { useQuery, gql } 	from '@apollo/client';
-import Authorization 		from './page/Authorization.js'
+import React, {useState} 	from 'react';
+import Authorization 		from './pages/Authorization.js';
+import Registration 		from './pages/Registration.js';
+import EmailSent 			from './pages/EmailSent.js';
 
 
 
-
-const GET_TEST = gql`
-	query GetTest {
-		me {
-			id
-		}
-	}
-`;
 
 const App = () => {
-	// const { loading, error, data } = useQuery(GET_TEST);
+	// Set states
+	const [page, setPage] = 		useState('Authorization');
+	const [name, setName] = 		useState('');
+	const [email, setEmail] = 		useState('');
+	const [password, setPassword] = useState('');
 
-	// if (loading) return <p>Loading...</p>;
-	// if (error) return <p>Error :(</p>;
+	// Render
+	if (page === 'Authorization') 	return <Authorization 	setPage={setPage} 
+															email={email} setEmail={setEmail} 
+															password={password} setPassword={setPassword} />;
 
-	// console.log(data);
-
-	return (
-		<Authorization />
-	);
+	if (page === 'Registration') 	return <Registration 	setPage={setPage} 
+															email={email} setEmail={setEmail} 
+															password={password} setPassword={setPassword} 
+															name={name} setName={setName}/>;
+															
+	if (page === 'EmailSent') 		return <EmailSent 		setPage={setPage} 
+															email={email} 
+															name={name}/>;
 }
-
 
 
 

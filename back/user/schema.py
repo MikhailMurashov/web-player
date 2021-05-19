@@ -10,8 +10,13 @@ class UserType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
+    check_user = graphene.Field(UserType, email=graphene.String())
     user = graphene.Field(UserType, id=graphene.Int())
     users = graphene.List(UserType)
+
+    def resolve_check_user(self, info, **kwargs):
+        email = kwargs.get('email')
+        return User.objects.get(email=email) 
 
     def resolve_user(self, info, **kwargs):
         id = kwargs.get('id')
