@@ -1,11 +1,9 @@
 import React from 'react';
-import { useQuery, useMutation, gql } 	from '@apollo/client';
-
-
-
+import { useQuery, useMutation, gql } from '@apollo/client';
 
 
 const EmailSent = props => {
+
 	// Init props
 	const {setPage, name, email} = props;
 
@@ -81,7 +79,6 @@ const EmailSent = props => {
 	
 
 }
-
 
 
 export default EmailSent;
