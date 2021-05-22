@@ -1,11 +1,15 @@
-import React from 'react';
-import { useQuery, useMutation, gql } from '@apollo/client';
+import React, {useContext} from 'react';
+import {UserContext} from '../App.js';
+import {useQuery, useMutation, gql} from '@apollo/client';
 
 
 const EmailSent = props => {
 
 	// Init props
-	const {setPage, name, email} = props;
+	const {setPage} = props;
+
+	// Init context
+	const {name, email, password} = useContext(UserContext);
 
 	const CHECK_USER = gql`
 		query {

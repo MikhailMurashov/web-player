@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {UserContext} from '../App.js';
 
 
 const Authorization = props => {
-
+	
 	// Init props
-	const {setPage, email, setEmail, password, setPassword} = props;
+	const {setPage} = props;
+
+	// Init context
+	const {email, setEmail, password, setPassword} = useContext(UserContext);
 
 	// Custom methods
 	const emailChanged = event => {

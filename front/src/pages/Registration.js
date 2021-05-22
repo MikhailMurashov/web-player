@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import CheckUser from '../CheckUser.js'
+import React, {useState, useContext} from 'react';
+import {UserContext} from '../App.js';
 
 
 const Registration = props => {
 
 	// Init props
-	const {setPage, name, setName, email, setEmail, password, setPassword} = props;
+	const {setPage} = props;
+
+	// Init context
+	const {name, setName, email, setEmail, password, setPassword} = useContext(UserContext);
 
 	// Custom methods
 	const nameChanged = event => {
