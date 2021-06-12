@@ -26,22 +26,22 @@ class Query(graphene.ObjectType):
         return User.objects.all()
 
 
-class UserMutation(graphene.Mutation):
-    class Arguments:
-        first_name = graphene.String(required=True)
-        last_name = graphene.String(required=True)
-        email = graphene.String(required=True)
-
+class UserCreateMutation(graphene.Mutation):
     user = graphene.Field(UserType)
 
-    @staticmethod
-    def mutate(root, info, first_name, last_name, email):
+    class Arguments:
+        first_name = graphene.String(required=True)
+        last_name = graphene.String(required=False)
+        email = graphene.String(required=True)
+
+    @classmethod
+    def mutate(cls, root, info, first_name, last_name, email):
         user = User.objects.create(first_name=first_name,
                                    last_name=last_name,
                                    email=email)
         user.save()
-        return UserMutation(user=user)
+        return cls(ok=True, errors=[], user=user)
 
 
 class Mutations(graphene.ObjectType):
-    user_create = UserMutation.Field()
+    user_create = UserCreateMutation.Field()
