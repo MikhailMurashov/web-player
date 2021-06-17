@@ -1,9 +1,9 @@
-import React 				from 'react';
-import { useQuery, gql } 	from '@apollo/client';
-
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 
 
 const CheckUser = props => {
+
 	// Init props
 	const {setPage, name, email} = props;
 

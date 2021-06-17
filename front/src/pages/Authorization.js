@@ -1,23 +1,27 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
+import {UserContext} from '../App.js';
 
 
 const Authorization = props => {
+	
 	// Init props
-	const {setPage, email, setEmail, password, setPassword} = props;
+	const {setPage} = props;
+
+	// Init context
+	const {email, setEmail, password, setPassword} = useContext(UserContext);
 
 	// Custom methods
-	const emailChanged = e => {
-		setEmail(e.target.value);
+	const emailChanged = event => {
+		setEmail(event.target.value);
 	}
 
-	const passwordChanged = e => {
-		setPassword(e.target.value);
+	const passwordChanged = event => {
+		setPassword(event.target.value);
 	}
 
-	const formSubmitted = e => {
+	const formSubmitted = event => {
 		alert('E-mail ' + email + '   Password: ' + password);
-		e.preventDefault();
+		event.preventDefault();
 	}
 
 	const toRegPage = () => {
@@ -49,5 +53,6 @@ const Authorization = props => {
 		</div>
 	);
 }
+
 
 export default Authorization;

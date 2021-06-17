@@ -1,26 +1,29 @@
-import React, {useState} 	from 'react';
-import CheckUser 			from '../CheckUser.js'
-
+import React, {useState, useContext} from 'react';
+import {UserContext} from '../App.js';
 
 
 const Registration = props => {
+
 	// Init props
-	const {setPage, name, setName, email, setEmail, password, setPassword} = props;
+	const {setPage} = props;
+
+	// Init context
+	const {name, setName, email, setEmail, password, setPassword} = useContext(UserContext);
 
 	// Custom methods
-	const nameChanged = e => {
-		setName(e.target.value);
+	const nameChanged = event => {
+		setName(event.target.value);
 	}
 
-	const emailChanged = e => {
-		setEmail(e.target.value);
+	const emailChanged = event => {
+		setEmail(event.target.value);
 	}
 
-	const passwordChanged = e => {
-		setPassword(e.target.value);
+	const passwordChanged = event => {
+		setPassword(event.target.value);
 	}
 
-	function formSubmitted() {
+	const formSubmitted = () => {
 
 		// if (FormSubmitted(email) === 'not exist') 
 		
@@ -33,7 +36,6 @@ const Registration = props => {
 	const toAuthPage = () => {
 		setPage('Authorization');
 	}
-
 
 	// Render
 	return (
@@ -65,5 +67,6 @@ const Registration = props => {
 		</div>
 	);
 }
+
 
 export default Registration;

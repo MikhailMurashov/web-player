@@ -1,11 +1,12 @@
-const bodyParser = 		require('body-parser');
-const request = 		require('request');
-const fs = 				require("fs");
+const bodyParser = require('body-parser');
+const request = require('request');
+const fs = require("fs");
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
-const cors = 			require('cors')
-const express = 		require('express');
-const app = 			express();
+const cors = require('cors')
+const express = require('express');
+const app = express();
+
 
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
@@ -18,7 +19,6 @@ var schema = buildSchema(`
 		users: [User]
 	}
 `);
- 
 
 let users = [
 	{id: 0, name: 'Max'},
@@ -31,6 +31,7 @@ var root = {
 	users
 };
 
+
 app.use(cors());
 
 app.use('/graphql', graphqlHTTP({
@@ -39,8 +40,5 @@ app.use('/graphql', graphqlHTTP({
 	graphiql: true,
 }));
 
-
-
 app.listen(4000);
 console.log('Running a GraphQL API server at http://localhost:4000/graphql');
-
